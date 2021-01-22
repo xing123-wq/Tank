@@ -25,6 +25,9 @@ namespace Assets.Script
 
         public GameObject Bullect;
 
+        public AudioSource MoveAudio;
+        public AudioClip[] TankAudio;
+
         /// <summary>
         ///玩家的 上 右 下 左
         /// </summary>
@@ -96,6 +99,22 @@ namespace Assets.Script
             var horizontal = Input.GetAxisRaw(Const.Horizontal);
             transform.Translate(Vector3.right * horizontal * MoveSpeed * Time.fixedDeltaTime, Space.World);
 
+            if (Mathf.Abs(horizontal) > 0.05f)
+            {
+                MoveAudio.clip = TankAudio[1];
+                if (!MoveAudio.isPlaying)
+                {
+                    MoveAudio.Play();
+                }
+            }
+            else
+            {
+                MoveAudio.clip = TankAudio[0];
+                if (!MoveAudio.isPlaying)
+                {
+                    MoveAudio.Play();
+                }
+            }
             if (horizontal < 0)
             {
                 _sprite.sprite = TankSprites[3];
@@ -115,6 +134,14 @@ namespace Assets.Script
             var vertical = Input.GetAxisRaw(Const.Vertical);
             transform.Translate(Vector3.up * vertical * MoveSpeed * Time.fixedDeltaTime, Space.World);
 
+            if (Mathf.Abs(vertical) > 0.05f)
+            {
+                MoveAudio.clip = TankAudio[1];
+                if (!MoveAudio.isPlaying)
+                {
+                    MoveAudio.Play();
+                }
+            }
             if (vertical < 0)
             {
                 _sprite.sprite = TankSprites[2];

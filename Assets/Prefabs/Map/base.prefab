@@ -124,3 +124,4 @@ MonoBehaviour:
   BrokenSprite: {fileID: 21300012, guid: 529e000d42d32de49bc475716ba7ae37, type: 3}
   ExplosinPrefab: {fileID: 437706892542208930, guid: 4cdf2dc05168c384693e9f189cd53b94,
     type: 3}
+  dieAudio: {fileID: 8300000, guid: 41660860d05dbdf49b3c8da6332a4ef9, type: 3}

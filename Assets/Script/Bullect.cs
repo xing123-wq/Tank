@@ -40,6 +40,10 @@ namespace Assets.Script
                     Destroy(gameObject);
                     break;
                 case "IronWall":
+                    if (IsPlayer)
+                    {
+                        collision.SendMessage("PlayAudio");
+                    }
                     Destroy(gameObject);
                     break;
                 case "Enemy":

@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 8068077475873443118}
   - component: {fileID: 4135512809224946615}
   - component: {fileID: 537077634846168996}
+  - component: {fileID: -133973944818439204}
   m_Layer: 0
   m_Name: 'Iron wall '
   m_TagString: IronWall
@@ -108,3 +109,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
+--- !u!114 &-133973944818439204
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8494254182357133438}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3041be15570d0bd46879130d39372bd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitaudio: {fileID: 8300000, guid: a36f2278a85dfc8458b569c2b95bacb6, type: 3}

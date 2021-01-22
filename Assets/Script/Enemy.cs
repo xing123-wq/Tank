@@ -136,9 +136,9 @@ public class Enemy : MonoBehaviour
     /// </summary>
     private void Die()
     {
-        PlayerMananger.Instance.playerscore++;
         Instantiate(ExplosionPrefab, transform.position, transform.rotation);
         Destroy(gameObject);
+        PlayerMananger.Instance.playerscore++;
     }
 
     private void OnCollisionEnter2D(Collision2D collision)

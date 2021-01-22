@@ -10,6 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 3625839685816438935}
   - component: {fileID: 6544316364797905437}
+  - component: {fileID: 5156196847870987137}
   m_Layer: 0
   m_Name: AirBarriar
   m_TagString: IronWall
@@ -57,3 +58,16 @@ BoxCollider2D:
   serializedVersion: 2
   m_Size: {x: 0.32, y: 0.32}
   m_EdgeRadius: 0
+--- !u!114 &5156196847870987137
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2902472518694335943}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3041be15570d0bd46879130d39372bd3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  hitaudio: {fileID: 8300000, guid: a36f2278a85dfc8458b569c2b95bacb6, type: 3}

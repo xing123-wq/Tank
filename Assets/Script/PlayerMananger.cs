@@ -2,6 +2,8 @@
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.SceneManagement;
+
 
 public class PlayerMananger : MonoBehaviour
 {
@@ -13,6 +15,7 @@ public class PlayerMananger : MonoBehaviour
     public Text PlayerScoreText;
     public Text PlayerLifeValueText;
 
+    public GameObject IsDefeatUI;
     public GameObject Bron;
     public static PlayerMananger Instance { get; set; }
     // Start is called before the first frame update
@@ -29,12 +32,20 @@ public class PlayerMananger : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if (IsDefeat)
+        {
+            Instance.IsDefeatUI.SetActive(true);
+            Invoke("ReturnToTheMainMenu", 3);
+            return;
+        }
         if (IsDead)
         {
             Recover();
         }
-        PlayerScoreText.text = playerscore.ToString();
-        PlayerLifeValueText.text = lifevalue.ToString();
+
+
+        PlayerScoreText.text = Instance.playerscore.ToString();
+        PlayerLifeValueText.text = Instance.lifevalue.ToString();
     }
 
     private void Recover()
@@ -42,8 +53,8 @@ public class PlayerMananger : MonoBehaviour
         if (lifevalue <= 0)
         {
             //游戏失败，返回主界面
-
-
+            IsDefeat = true;
+            Invoke("ReturnToTheMainMenu", 3);
         }
         else
         {
@@ -52,5 +63,9 @@ public class PlayerMananger : MonoBehaviour
             game.GetComponent<Borm>().CreatePlayer = true;
             IsDead = false;
         }
+    }
+    private void ReturnToTheMainMenu()
+    {
+        SceneManager.LoadScene(0);
     }
 }
